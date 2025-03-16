@@ -1,23 +1,17 @@
 
---TAREA 2+_SEMANA 2 
---Guillen Ondoy Sofia
---Jimenez Cordero Marcos Andres
---Member Navarro Ana
---Pastrana Granja Yendry Liveth
---Tataje Sandoval Brandom Steven
 
 create database SCD;
 
 --------------TYPE 0 --------------
--- Creaci髇 de la tabla
+-- Creaci贸n de la tabla
 CREATE TABLE Producto_SCD0 (
     ProductoID INT PRIMARY KEY,
     NombreProducto VARCHAR(255),
     Categoria VARCHAR(255)
 );
 
--- Inserci髇 de datos
-INSERT INTO Producto_SCD0 (ProductoID, NombreProducto, Categoria) VALUES (1, 'Laptop', 'Electr髇ica');
+-- Inserci贸n de datos
+INSERT INTO Producto_SCD0 (ProductoID, NombreProducto, Categoria) VALUES (1, 'Laptop', 'Electr贸nica');
 INSERT INTO Producto_SCD0 (ProductoID, NombreProducto, Categoria) VALUES (2, 'Libro', 'Literatura');
 
 SELECT * FROM Producto_SCD0;
@@ -34,7 +28,7 @@ CREATE TABLE Cliente_SCD1 (
 INSERT INTO Cliente_SCD1 (ClienteID, NombreCliente, DireccionActual) VALUES (1, 'Alicia Smith', 'Calle Principal 123');
 INSERT INTO Cliente_SCD1 (ClienteID, NombreCliente, DireccionActual) VALUES (2, 'Roberto Johnson', 'Avenida Roble 456');
 
--- Ejemplo de actualizaci髇: 
+-- Ejemplo de actualizaci贸n: 
 UPDATE Cliente_SCD1 SET DireccionActual = 'Calle Pino 789' WHERE ClienteID = 1;
 
 SELECT * FROM Cliente_SCD1
@@ -52,14 +46,14 @@ CREATE TABLE Empleado_SCD2 (
     PRIMARY KEY (EmpleadoID, FechaInicioVigencia)
 );
 
--- Inserci髇 de datos
+-- Inserci贸n de datos
 INSERT INTO Empleado_SCD2 (EmpleadoID, NombreEmpleado, Departamento, FechaInicioVigencia, FechaFinVigencia, EsActual) 
 VALUES (1, 'Carolina Blanco', 'Ventas', '2022-01-01', '9999-12-31', 'T');
 
 INSERT INTO Empleado_SCD2 (EmpleadoID, NombreEmpleado, Departamento, FechaInicioVigencia, FechaFinVigencia, EsActual) 
 VALUES (2, 'David Verde', 'TI', '2023-06-01', '9999-12-31', 'T');
 
--- Actualizaci髇 simulada de SCD Tipo 2:
+-- Actualizaci贸n simulada de SCD Tipo 2:
 -- 1. Cerrar la fila anterior de Carolina Blanco
 UPDATE Empleado_SCD2 
 SET FechaFinVigencia = '2023-11-15', EsActual = 'F' 
@@ -85,7 +79,7 @@ CREATE TABLE Producto_SCD3 (
 INSERT INTO Producto_SCD3 (ProductoID, NombreProducto, PrecioActual, PrecioAnterior) VALUES (1, 'Monitor', 200.00, NULL);
 INSERT INTO Producto_SCD3 (ProductoID, NombreProducto, PrecioActual, PrecioAnterior) VALUES (2, 'Teclado', 50.00, NULL);
 
--- Ejemplo de actualizaci髇: 
+-- Ejemplo de actualizaci贸n: 
 UPDATE Producto_SCD3 SET PrecioAnterior = PrecioActual, PrecioActual = 220.00 WHERE ProductoID = 1;
 
 SELECT * FROM Producto_SCD3;
